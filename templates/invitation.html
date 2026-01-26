@@ -1,0 +1,139 @@
+<!-- templates/invitation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Playfair Display', serif; background-color: #fff5f7; color: #555; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #ffb6c1 0%, #ff9eb5 100%); border-radius: 20px; margin-bottom: 30px; }
+        .header h1 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: #fff; margin-bottom: 10px; }
+        .navigation { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
+        .nav-btn { padding: 12px 25px; background-color: #ff4d6d; color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 1.1rem; transition: all 0.3s; text-decoration: none; display: inline-block; }
+        .nav-btn:hover { background-color: #ff3355; transform: translateY(-3px); }
+        .message-box { background-color: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2); margin-bottom: 30px; }
+        .heart { color: #ff4d6d; animation: heartbeat 1.5s infinite; }
+        @keyframes heartbeat { 0% { transform: scale(1); } 5% { transform: scale(1.1); } 10% { transform: scale(1); } 15% { transform: scale(1.1); } 20% { transform: scale(1); } 100% { transform: scale(1); } }
+        .response-section { text-align: center; margin: 40px 0; }
+        .response-buttons { display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap; }
+        .response-btn { padding: 15px 40px; font-size: 1.5rem; font-family: 'Dancing Script', cursive; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
+        .yes-btn { background-color: #ff4d6d; color: white; }
+        .yes-btn:hover { background-color: #ff3355; transform: translateY(-5px); }
+        .no-btn { background-color: #f0f0f0; color: #666; }
+        .no-btn:hover { background-color: #e0e0e0; }
+        .footer { text-align: center; padding: 20px; color: #ff9eb5; margin-top: 40px; }
+        @media (max-width: 768px) { .header h1 { font-size: 3rem; } .response-buttons { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Will You Be My <span class="heart">♥</span> Valentine?</h1>
+            <p>A special invitation from someone who adores you more than words can say</p>
+        </header>
+
+        <div class="navigation">
+            <a href="/love-notes" class="nav-btn"><i class="fas fa-heart"></i> Love Notes</a>
+            <a href="/memories" class="nav-btn"><i class="fas fa-memory"></i> Our Memories</a>
+            <a href="/countdown" class="nav-btn"><i class="fas fa-calendar-heart"></i> Countdown</a>
+            <a href="/secret-note" class="nav-btn"><i class="fas fa-lock"></i> Secret Note</a>
+        </div>
+
+        <div class="message-box">
+            <h2 style="color: #ff4d6d; font-family: 'Dancing Script', cursive; text-align: center; margin-bottom: 20px;">
+                My Dearest <span id="girlfriendName">{{ session.get('girlfriend_name', 'Baby') }}</span>,
+            </h2>
+            <p>Every day with you feels like a beautiful dream, and I want to make this Valentine's Day as special as you are to me.</p>
+            <p>You've brought so much light, laughter, and love into my life, and I can't imagine celebrating this day of love with anyone else.</p>
+            <p>So with all my heart, I'm asking: will you be my Valentine?</p>
+            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #ff4d6d;">
+                Forever yours,<br>
+                <span style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">Your Honji</span>
+            </p>
+        </div>
+
+        <div class="response-section">
+            <h2 style="color: #ff4d6d; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">What's your answer?</h2>
+
+            <div class="response-buttons">
+                <button class="response-btn yes-btn" id="yesBtn">Yes, Absolutely! <i class="fas fa-heart"></i></button>
+                <button class="response-btn no-btn" id="noBtn">Maybe Later</button>
+            </div>
+
+            <div id="responseMessage" style="display: none; margin-top: 30px;">
+                <h3 style="color: #ff4d6d; font-family: 'Dancing Script', cursive;">You've made me the happiest! <i class="fas fa-heart heart"></i></h3>
+                <p>Check out the <a href="/love-notes" style="color: #ff4d6d;">Love Notes</a> section for more sweet messages!</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart" style="color: #ff4d6d;"></i> for the sweetest person in my life</p>
+            <p>Happy Valentine's Day, my baby</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ask for name if not in session
+            if (!"{{ session.get('girlfriend_name') }}") {
+                const name = prompt("What should I call you, my love?", "My Baby");
+                if (name && name.trim()) {
+                    document.getElementById('girlfriendName').textContent = name;
+                }
+            }
+
+            // Yes button handler
+            document.getElementById('yesBtn').addEventListener('click', async function() {
+                const name = document.getElementById('girlfriendName').textContent;
+
+                const response = await fetch('/api/valentine-response', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        response: 'yes',
+                        message: 'I would love to be your Valentine!'
+                    })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    document.querySelector('.response-buttons').style.display = 'none';
+                    document.getElementById('responseMessage').style.display = 'block';
+
+                    // Celebration effect
+                    this.classList.add('celebrate');
+
+                    // Redirect to love notes after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = '/love-notes';
+                    }, 3000);
+                }
+            });
+
+            // No button handler
+            document.getElementById('noBtn').addEventListener('mouseover', function() {
+                const x = Math.random() * 200 - 100;
+                const y = Math.random() * 200 - 100;
+                this.style.transform = `translate(${x}px, ${y}px)`;
+
+                // Make yes button bigger
+                const yesBtn = document.getElementById('yesBtn');
+                yesBtn.style.transform = 'scale(1.1)';
+                setTimeout(() => yesBtn.style.transform = 'scale(1)', 300);
+            });
+
+            // If already said yes, show celebration
+            if ("{{ session.get('said_yes') }}" === "True") {
+                document.querySelector('.response-buttons').style.display = 'none';
+                document.getElementById('responseMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- templates/404.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Playfair Display', serif; background-color: #fff5f7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .error-box { text-align: center; }
+        .error-icon { font-size: 5rem; color: #ffb6c1; margin-bottom: 20px; }
+        .error-title { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #ff4d6d; margin-bottom: 20px; }
+        .error-message { font-size: 1.2rem; margin-bottom: 30px; }
+        .home-btn { padding: 15px 30px; background-color: #ff4d6d; color: white; border: none; border-radius: 50px; font-size: 1.2rem; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-box">
+            <div class="error-icon">
+                <i class="fas fa-heart-broken"></i>
+            </div>
+
+            <h1 class="error-title">Oops! Page Not Found</h1>
+            <p class="error-message">Even though this page is missing, my love for you isn't!</p>
+            <p>Let's go back to the main invitation:</p>
+
+            <a href="/" class="home-btn"><i class="fas fa-heart"></i> Back to Valentine's Invitation</a>
+        </div>
+    </div>
+</body>
+</html>

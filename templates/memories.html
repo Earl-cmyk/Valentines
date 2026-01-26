@@ -1,0 +1,163 @@
+<!-- templates/memories.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Journey - Valentine's Special</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Playfair Display', serif; background-color: #fff5f7; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 30px; background: linear-gradient(135deg, #ffb6c1 0%, #ff9eb5 100%); border-radius: 20px; margin-bottom: 30px; }
+        .header h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #fff; }
+        .back-btn { display: inline-block; margin: 20px 0; color: #ff4d6d; text-decoration: none; font-size: 1.1rem; }
+        .memory-timeline { position: relative; max-width: 800px; margin: 50px auto; }
+        .memory-timeline::after { content: ''; position: absolute; width: 6px; background-color: #ffb6c1; top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+        .memory-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+        .memory-item:nth-child(odd) { left: 0; }
+        .memory-item:nth-child(even) { left: 50%; }
+        .memory-content { padding: 25px; background-color: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(255, 182, 193, 0.1); position: relative; }
+        .memory-date { font-weight: bold; color: #ff4d6d; font-size: 1.1rem; margin-bottom: 5px; }
+        .memory-title { font-family: 'Dancing Script', cursive; font-size: 2rem; color: #ff4d6d; margin: 10px 0; }
+        .empty-state { text-align: center; padding: 50px; color: #ff9eb5; }
+        .timeline-dot { position: absolute; width: 20px; height: 20px; right: -10px; background-color: #ff4d6d; border: 4px solid white; top: 30px; border-radius: 50%; z-index: 1; }
+        .memory-item:nth-child(even) .timeline-dot { left: -10px; }
+        .love-quote { font-style: italic; color: #ff9eb5; text-align: center; margin: 30px 0; font-size: 1.2rem; padding: 0 20px; }
+        .monthsary-count { background-color: #ffe4e9; padding: 5px 15px; border-radius: 20px; font-size: 1rem; color: #ff4d6d; display: inline-block; margin-top: 10px; }
+        .heart-icon { color: #ff4d6d; margin: 0 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Invitation</a>
+
+        <div class="header">
+            <h1>Our Love Journey <i class="fas fa-heart"></i></h1>
+            <p style="color: white;">Every moment with you is a beautiful chapter in our story</p>
+        </div>
+
+        <div class="love-quote">
+            <i class="fas fa-quote-left heart-icon"></i>
+            The best love is the kind that awakens the soul and makes us reach for more,
+            that plants a fire in our hearts and brings peace to our minds.
+            <i class="fas fa-quote-right heart-icon"></i>
+        </div>
+
+        <div class="memory-timeline">
+            <!-- August 10 - First Confirmation -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">August 10</div>
+                    <h3 class="memory-title">The Beginning of Us</h3>
+                    <p>The day we first acknowledged that something special was growing between us. I remember the butterflies in my stomach, the hope in my heart, and the beautiful realization that this was the start of something truly meaningful. That moment when we both knew this wasn't just friendship anymore, but the beautiful beginning of our love story.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-calendar-heart heart-icon"></i> Where our journey began
+                    </div>
+                </div>
+            </div>
+
+            <!-- September 14 - Love Confirmation -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">September 14</div>
+                    <h3 class="memory-title">Love Confirmed</h3>
+                    <p>The day we officially confessed our love for each other. Saying "I love you" to you felt like the most natural thing in the world, yet it changed everything. My heart overflowed with happiness knowing that what I felt was reciprocated. From that day forward, every "I love you" has been a promise, a celebration, and a reminder of how lucky I am to have you.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-heart heart-icon"></i> The day love found its voice
+                    </div>
+                </div>
+            </div>
+
+            <!-- October 14 - 1 Month -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">October 14</div>
+                    <h3 class="memory-title">One Month Together</h3>
+                    <p>Our first monthsary! One month of official love and it already felt like we'd known each other forever. I was grateful for every laugh, every conversation, every moment we shared. You had already become my favorite part of every day, and I knew in my heart that this was just the beginning of something beautiful.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-star heart-icon"></i> 1 Month of Love
+                    </div>
+                </div>
+            </div>
+
+            <!-- November 14 - 2 Months -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">November 14</div>
+                    <h3 class="memory-title">Two Months of Bliss</h3>
+                    <p>Two months with you and my gratitude only grew deeper. I was thankful for your patience, your understanding, and the way you accepted me completely. Each day with you taught me more about love, about partnership, and about the joy of building something real together.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-star heart-icon"></i> 2 Months of Growing Together
+                    </div>
+                </div>
+            </div>
+
+            <!-- December 14 - 3 Months -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">December 14</div>
+                    <h3 class="memory-title">Three Months Stronger</h3>
+                    <p>Three months in, and our love felt both comfortable and exciting. I was grateful for the way we navigated challenges together, for the comfort we found in each other, and for the way our love only seemed to grow stronger with each passing day. Celebrating our love during the holiday season made everything feel even more magical.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-star heart-icon"></i> 3 Months of Strength
+                    </div>
+                </div>
+            </div>
+
+            <!-- January 14 - 4 Months -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content">
+                    <div class="memory-date">January 14</div>
+                    <h3 class="memory-title">Four Months of Growth</h3>
+                    <p>Starting a new year with you by my side was the greatest gift. Four months together and I was grateful for every lesson learned, every hurdle overcome, and every moment of pure happiness. You showed me what it means to be loved unconditionally, and I fell in love with you more with each passing day.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-star heart-icon"></i> 4 Months of Deepening Love
+                    </div>
+                </div>
+            </div>
+
+            <!-- February 14 - 5 Months (Valentine's Day!) -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content" style="border: 2px solid #ff4d6d; background-color: #fffafb;">
+                    <div class="memory-date">February 14</div>
+                    <h3 class="memory-title">Five Months & Our First Valentine's</h3>
+                    <p>Five months together and what perfect timing - our first Valentine's Day as a couple! I'm endlessly grateful that I get to celebrate this day of love with you, my love. You've made every single day since August 10 feel like a celebration of what true connection means. Today, on our 5th monthsary and Valentine's Day, I want you to know that my love for you grows exponentially with each passing moment.</p>
+                    <div class="monthsary-count" style="background-color: #ff4d6d; color: white;">
+                        <i class="fas fa-heart heart-icon"></i> 5 Months & Valentine's Day!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Monthsaries -->
+            <div class="memory-item">
+                <div class="timeline-dot"></div>
+                <div class="memory-content" style="background-color: #fef5f7;">
+                    <div class="memory-date">Every 14th of the Month</div>
+                    <h3 class="memory-title">Every Monthsary With You</h3>
+                    <p>Each 14th is a reminder of how blessed I am to have you in my life. No matter how many months pass, my gratitude only deepens. I'm thankful for your love, your kindness, your laughter, and the beautiful person you are. Every single day with you feels like a gift, and I promise to cherish each moment, to grow with you, and to love you more with each passing monthsary.</p>
+                    <p style="margin-top: 15px; font-style: italic;">Here's to all the monthsaries to come, each one a celebration of our love that continues to grow, deepen, and become more beautiful with time.</p>
+                    <div class="monthsary-count">
+                        <i class="fas fa-infinity heart-icon"></i> To Infinity and Beyond
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="love-quote">
+            <i class="fas fa-quote-left heart-icon"></i>
+            I don't just love you for who you are, I love you for who I become when I'm with you.
+            <i class="fas fa-quote-right heart-icon"></i>
+        </div>
+    </div>
+</body>
+</html>
