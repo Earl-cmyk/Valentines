@@ -1,46 +1,117 @@
-<!-- templates/countdown.html -->
+<!-- templates/countdown.html  →  VALENTINE LETTER VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Countdown</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Playfair Display', serif; background-color: #fff5f7; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        .countdown-card { background: white; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2); }
-        .title { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #ff4d6d; margin-bottom: 20px; }
-        .days-left { font-size: 5rem; color: #ff4d6d; font-weight: bold; margin: 30px 0; }
-        .days-text { color: #ff9eb5; font-size: 1.5rem; margin-bottom: 30px; }
-        .message { font-size: 1.2rem; line-height: 1.8; margin: 30px 0; }
-        .back-btn { display: inline-block; margin-top: 30px; color: #ff4d6d; text-decoration: none; font-size: 1.1rem; }
-        .hearts { font-size: 2rem; color: #ffb6c1; letter-spacing: 10px; margin: 20px 0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Valentine 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Playfair Display',serif;
+    background:#fff5f7;
+    color:#333;
+}
+
+.container{
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 20px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.letter-card{
+    background:white;
+    border-radius:20px;
+    padding:50px;
+    box-shadow:0 10px 30px rgba(255,182,193,0.25);
+    line-height:1.9;
+}
+
+.title{
+    font-family:'Dancing Script',cursive;
+    font-size:3.2rem;
+    text-align:center;
+    color:#ff4d6d;
+    margin-bottom:30px;
+}
+
+.message{
+    font-size:1.15rem;
+    white-space:pre-line;
+}
+
+.signature{
+    margin-top:40px;
+    font-size:1.2rem;
+    color:#ff4d6d;
+}
+
+.hearts{
+    text-align:center;
+    font-size:2rem;
+    color:#ffb6c1;
+    margin-bottom:20px;
+    letter-spacing:8px;
+}
+
+.back-btn{
+    display:block;
+    margin-top:40px;
+    text-align:center;
+    text-decoration:none;
+    color:#ff4d6d;
+    font-size:1.1rem;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="countdown-card">
-            <h1 class="title">Counting Down to Valentine's Day</h1>
 
-            <div class="hearts">
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-heart"></i>
-            </div>
+<div class="container">
+<div class="letter-card">
 
-            <div class="days-left">{{ days_left }}</div>
-            <div class="days-text">days until Valentine's Day {{ valentine_date.year }}</div>
+<div class="hearts">❤ ❤ ❤</div>
 
-            <div class="message">
-                <p>Every day brings us closer to celebrating our love on Valentine's Day!</p>
-                <p>I can't wait to make it the most special day for you, my baby.</p>
-            </div>
+<h1 class="title">Happy Valentine’s Day, My Love 💌</h1>
 
-            <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Invitation</a>
-        </div>
-    </div>
+<div class="message">
+Hi babyyyy 💕,
+
+Happy Valentine’s Day, Baby.  
+Today isn’t just another date on a calendar — it’s a reminder of how lucky I am to exist in the same lifetime as you.
+
+Ever since you came into my life, everything started feeling softer, warmer, and more meaningful. Even on my hardest days, just knowing that you’re there makes everything feel lighter. You didn’t just become part of my world — you became my safe place inside it.
+
+I love the way you try to understand me, even my weird interests and random thoughts. Every little effort you make — even the smallest ones — stay in my heart longer than you probably realize. You make me feel seen, understood, and genuinely loved in a way I never thought I would experience.
+
+You’re my comfort during quiet nights, my laughter during chaotic days, and the person I look forward to talking to no matter how busy life becomes. Even when we’re tired, even when distance or responsibilities get heavy, loving you still feels like the easiest and most natural thing in the world.
+
+I want you to know that you never have to pretend around me. I love every version of you — your happy days, your tired moments, your silence, your laughter, your strength, and even the parts you think are imperfect. Every piece of you feels real and beautiful to me.
+
+Thank you for staying, for choosing us, for being patient with me, and for letting me be part of your life. I promise to keep learning you, growing with you, and loving you more deeply as time goes on.
+
+No matter how many Valentine’s Days pass, you will always be my favorite person — my peace, my excitement, my home.
+
+I love you endlessly. Yesterday, today, tomorrow, and in every moment we have yet to live together.
+</div>
+
+<div class="signature">
+Forever yours,<br>
+— Your Baby 💖
+</div>
+
+<a href="/" class="back-btn">← Back to Invitation</a>
+
+</div>
+</div>
+
 </body>
 </html>
